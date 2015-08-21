@@ -20,13 +20,6 @@ angular.module('todolist').controller('ListCtrl',function($scope){
 		});
 	};
 
-	// Function to search todo to list
-	vm.searchTODO = function(text){
-		vm.todoList = $.grep(vm.todoList, function(e){ 
-			return e.text === text; 
-		});
-	};
-
 	// Function to handle enter key
 	vm.eventHandler = function(event){
 		if(event.keyCode === 13){
@@ -34,15 +27,4 @@ angular.module('todolist').controller('ListCtrl',function($scope){
 		}
 	};
 
-	// Function to display completed todos
-	vm.showCompleted = function(){
-		vm.showCompleted = true;
-		vm.showAll = false;
-	};
-
-	// Function to display uncompleted todos
-	vm.showUnCompleted = function(){
-		vm.showCompleted = false;
-		vm.showAll = false;
-	};
 });
