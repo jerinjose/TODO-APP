@@ -1,0 +1,46 @@
+
+body {
+    background-color: #ddd;
+}
+.clearfix:after {
+    clear: both;
+    content: ".";
+    display: block;
+    height: 0;
+    visibility: hidden;
+}
+
+a{
+  outline: none!important;
+}
+.clearfix {
+    display: inline-block;
+}
+.clearfix {
+    display: block;
+}
+.pointer-cursor{
+  cursor: pointer;
+}
+.todo{
+  margin: 7px 0 0 0;
+  float: left;
+  font-weight: bold;
+}
+.mb0{
+  margin-bottom: 0;
+}
+.w100{
+  width: 100%;
+}
+.check-block .checkbox{
+  margin: 0;
+  float: left;
+}
+.check-block .badge{
+  background: red;
+  color: #fff;
+}
+.block{
+  margin-top: 50px;
+}

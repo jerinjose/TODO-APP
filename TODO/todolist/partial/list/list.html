@@ -1,0 +1,86 @@
+<div class="col-md-12">
+	  <div class="container">
+        <div class="row">
+            <div class="col-md-6 col-md-offset-3">
+                <div class="block panel panel-default">
+                    <div class="panel-body text-center">
+                        <form role="form">
+                            <div class="input-group form-group col-md-6 col-md-offset-3">
+                                <input type="text" class="form-control " placeholder="Add todos..." ng-model="view.textData" ng-keypress="view.eventHandler($event)">
+                                <span class="input-group-addon pointer-cursor" ng-click="view.addToList()"><i class="fa fa-plus"></i></span>
+                            </div>
+                        </form>
+                        <div class="well well-sm text-left clearfix">
+                            <span class="todo">To Do List</span>
+                            <!-- <div class="col-lg-6 pull-right">
+                                <div class="input-group">
+                                  <input type="text" class="form-control" placeholder="Search for..." ng-model="view.searchData" ng-keypress="view.searchTODO(view.searchData)">
+                                  <span class="input-group-btn">
+                                    <button class="btn btn-default" type="button" ng-click="view.searchTODO(view.searchData)">Go!</button>
+                                  </span>
+                                </div>
+                            </div> -->
+                            <div class="col-lg-6 pull-right">
+	                            <div class="checkbox">
+									<label>
+										<input type="checkbox" value="" ng-model="view.todoCompleted">
+										Completed TODOs
+									</label>
+	                            </div>
+								<div class="checkbox">
+									<label>
+										<input type="checkbox" value="" ng-model="view.todoRemained">
+										Uncompleted TODOs
+									</label>
+								</div>
+							</div>
+                        </div>
+
+                        <ul class="list-group check-block" ng-repeat="todo in view.todoList track by $index" ng-show="!view.todoCompleted && !view.todoRemained">
+                        
+                            <li class="list-group-item pull-left w100">
+                                <div class="checkbox">
+                                  <label ng-class="{'completed':todo.completed}">
+                                    <input type="checkbox" value="" ng-model="todo.completed">
+                                    {{todo.text}}
+                                  </label>
+                                </div>
+                                <a href="" class="badge" ng-click="view.removeTODO(todo.text)"><i class="fa fa-times"></i></a>
+                   
+                            </li>
+                        </ul>
+
+                        <ul class="list-group check-block" ng-show="view.todoCompleted" ng-repeat="todo in view.todoList | filter:{completed: true }">
+                        
+                            <li class="list-group-item pull-left w100">
+                                <div class="checkbox">
+                                  <label ng-class="{'completed':todo.completed}">
+                                    <input type="checkbox" value="" ng-model="todo.completed">
+                                    {{todo.text}}
+                                  </label>
+                                </div>
+                                <a href="" class="badge" ng-click="view.removeTODO(todo.text)"><i class="fa fa-times"></i></a>
+                   
+                            </li>
+                        </ul>
+                        <ul class="list-group check-block" ng-show="view.todoRemained" ng-repeat="todo in view.todoList | filter:{ completed: false }">
+                        
+                            <li class="list-group-item pull-left w100">
+                                <div class="checkbox">
+                                  <label ng-class="{'completed':todo.completed}">
+                                    <input type="checkbox" value="" ng-model="todo.completed">
+                                    {{todo.text}}
+                                  </label>
+                                </div>
+                                <a href="" class="badge" ng-click="view.removeTODO(todo.text)"><i class="fa fa-times"></i></a>
+                   
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+</div>
